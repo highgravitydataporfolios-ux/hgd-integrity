@@ -100,6 +100,17 @@ for (const artifact of manifest.artifacts) {
   assert(bytes.length === artifact.byte_length, 'artifact byte length mismatch: ' + artifact.filename);
   ensureNoPrivateMarkers(artifact.filename, bytes);
 }
+const allowedBundleFiles = new Set([
+  ...seenFiles,
+  'hgd-integrity-manifest-v1.json',
+  'hgd-integrity-manifest-v1.sigstore.json',
+  'SHA256SUMS',
+  'verification-receipt.json',
+  'README.md',
+]);
+for (const entry of fs.readdirSync(dir)) {
+  assert(allowedBundleFiles.has(entry), 'unregistered file in release directory: ' + entry);
+}
 const record = readJsonNoDuplicates(path.join(dir, 'record.json'));
 const brief = readJsonNoDuplicates(path.join(dir, 'brief.json'));
 assert(record.citation_id === manifest.citation_id, 'record citation mismatch');
