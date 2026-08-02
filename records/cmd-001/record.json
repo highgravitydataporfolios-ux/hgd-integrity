@@ -1,0 +1,49 @@
+{
+  "schema": "hgd.cmd.public.v1",
+  "product": "HGD Certified Model Decision",
+  "citation_id": "HGD CMD-001",
+  "machine_identity": "hgd:cmd:001",
+  "canonical_product_id": "hgd-weekly-record-2026-07-17",
+  "issue_number": 1,
+  "record_route": "/records/001",
+  "model_public_id": "master_v1_3_dcl_confidence_rcl_hc_guardrail_v2_ml_signal_v1",
+  "run_date": "2026-07-17",
+  "decision_period": "2026-07-12",
+  "publication_timestamp": "2026-07-18T17:32:11Z",
+  "publication_date": "2026-07-17",
+  "allocation_effective_date": "2026-07-17",
+  "posture": "Recovery Transition",
+  "regime": "contraction",
+  "confidence": "medium",
+  "continuity": "PUBLIC_RECORD_001_CANDIDATE",
+  "publication_status": "PUBLISHED",
+  "allocation_summary": "Certified analytical Core state: primary 27.6%, secondary 18.4%, defensive 54.0%, avoid 0.0%. These are internal analytical buckets, not instrument-level implementation weights.",
+  "public_reasoning": {
+    "why_this_decision": "HGD's certified state remains in Recovery Transition while stress monitoring is elevated. The first certified public record establishes the opening public state; the private July 13 baseline remains internal and unnumbered.",
+    "what_changed": [
+      "The certified Core posture is more defensive than the private internal baseline.",
+      "Defensive analytical Core weight increased from 43.2% to 54.0%.",
+      "The first certified public record establishes the opening public state; the private July 13 baseline remains internal and unnumbered."
+    ],
+    "what_held": [
+      "Certified posture remains Recovery Transition.",
+      "Regime remains contraction.",
+      "Confidence remains medium."
+    ],
+    "what_matters_now": [
+      "Stress alert active",
+      "Certified analytical Core state: primary 27.6%, secondary 18.4%, defensive 54.0%, avoid 0.0%. These are internal analytical buckets, not instrument-level implementation weights."
+    ]
+  },
+  "companion_brief": {
+    "citation_id": "Brief 001",
+    "brief_id": "Brief 001",
+    "brief_route": "/briefs/001"
+  },
+  "methodology_public_version": "HGD public methodology v1",
+  "public_disclosure": [
+    "Record 001 is a certified analytical publication, not a retail implementation specification.",
+    "No return, benchmark observation, index value, broker file, trade instruction, or options instruction is produced by this record.",
+    "The private July 13 certified baseline remains internal and unnumbered."
+  ]
+}

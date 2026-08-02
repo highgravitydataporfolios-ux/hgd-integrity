@@ -1,0 +1,49 @@
+{
+  "schema": "hgd.market_brief.public.v2",
+  "product": "HGD Weekly Market Brief",
+  "brief_id": "Brief 001",
+  "brief_route": "/briefs/001",
+  "associated_cmd": {
+    "citation_id": "HGD CMD-001",
+    "machine_identity": "hgd:cmd:001",
+    "record_route": "/records/001"
+  },
+  "cycle": {
+    "run_date": "2026-07-17",
+    "decision_period": "2026-07-12",
+    "publication_timestamp": "2026-07-18T17:32:11Z",
+    "publication_date": "2026-07-17",
+    "allocation_effective_date": "2026-07-17"
+  },
+  "title": "Weekly Market Brief",
+  "sections": [
+    {
+      "heading": "The Check",
+      "text": "Pinned market context is fragile while HGD's certified posture is Recovery Transition in a contraction regime with medium confidence."
+    },
+    {
+      "heading": "What Actually Changed",
+      "text": "Pinned market context may describe market facts only; certified HGD posture remains authoritative for HGD state. Certified analytical Core state: primary 27.6%, secondary 18.4%, defensive 54.0%, avoid 0.0%. These are internal analytical buckets, not instrument-level implementation weights."
+    },
+    {
+      "heading": "The Line",
+      "text": "This certified Market Brief is associated with Record 001."
+    }
+  ],
+  "publication_status": "PUBLISHED",
+  "revision": {
+    "active_public_revision": 1,
+    "supersedes_revision": null,
+    "correction_classification": "PUBLIC_ARTIFACT_SANITIZATION_AFTER_PRIOR_WEB_RELEASE"
+  },
+  "public_disclosure": [
+    "Market facts come from the pinned July 17 market-context package.",
+    "Certified HGD posture comes only from the certified HN.11 state.",
+    "Market context does not calculate or override HGD posture."
+  ],
+  "visual_contract": {
+    "chart_count": 0,
+    "figure_count": 0,
+    "orphaned_visual_references": 0
+  }
+}

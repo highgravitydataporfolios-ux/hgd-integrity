@@ -1,0 +1,20 @@
+name: Validate HGD Integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Validate public bundles without signatures
+        run: |
+          node verify/hgd-verify.mjs records/cmd-001 --skip-signature
+          node verify/hgd-verify.mjs records/cmd-002 --skip-signature

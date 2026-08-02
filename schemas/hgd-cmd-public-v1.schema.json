@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://highgravitydata.com/schemas/hgd-cmd-public-v1.schema.json",
+  "title": "HGD CMD Public Projection v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "product",
+    "citation_id",
+    "machine_identity",
+    "canonical_product_id",
+    "issue_number",
+    "record_route",
+    "model_public_id",
+    "run_date",
+    "decision_period",
+    "publication_timestamp",
+    "publication_date",
+    "allocation_effective_date",
+    "posture",
+    "regime",
+    "confidence",
+    "continuity",
+    "publication_status",
+    "public_reasoning",
+    "companion_brief",
+    "methodology_public_version",
+    "public_disclosure"
+  ],
+  "properties": {
+    "schema": {
+      "const": "hgd.cmd.public.v1"
+    },
+    "product": {
+      "const": "HGD Certified Model Decision"
+    },
+    "citation_id": {
+      "type": "string",
+      "pattern": "^HGD CMD-[0-9]{3}$"
+    },
+    "machine_identity": {
+      "type": "string",
+      "pattern": "^hgd:cmd:[0-9]{3}$"
+    },
+    "canonical_product_id": {
+      "type": "string"
+    },
+    "issue_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "record_route": {
+      "type": "string",
+      "pattern": "^/records/[0-9]{3}$"
+    },
+    "model_public_id": {
+      "type": "string"
+    },
+    "run_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "decision_period": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "publication_timestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "publication_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "allocation_effective_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "posture": {
+      "type": "string"
+    },
+    "regime": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "string"
+    },
+    "continuity": {
+      "type": "string"
+    },
+    "publication_status": {
+      "type": "string"
+    },
+    "allocation_summary": {
+      "type": "string"
+    },
+    "public_reasoning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "why_this_decision",
+        "what_changed",
+        "what_held",
+        "what_matters_now"
+      ],
+      "properties": {
+        "why_this_decision": {
+          "type": "string"
+        },
+        "what_changed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_held": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_matters_now": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "companion_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citation_id",
+        "brief_id",
+        "brief_route"
+      ],
+      "properties": {
+        "citation_id": {
+          "type": "string"
+        },
+        "brief_id": {
+          "type": "string"
+        },
+        "brief_route": {
+          "type": "string",
+          "pattern": "^/briefs/[0-9]{3}$"
+        }
+      }
+    },
+    "methodology_public_version": {
+      "type": "string"
+    },
+    "public_disclosure": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

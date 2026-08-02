@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://highgravitydata.com/schemas/hgd-integrity-manifest-v1.schema.json",
+  "title": "HGD Integrity Manifest v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "series",
+    "publication_id",
+    "citation_id",
+    "canonical_product_id",
+    "registration_type",
+    "canonical_publication_at",
+    "integrity_registration_at",
+    "web_release_status_at_registration",
+    "hash_algorithm",
+    "chain_position",
+    "genesis",
+    "previous_manifest_sha256",
+    "status",
+    "supersedes_manifest_sha256",
+    "artifacts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "hgd.integrity.manifest.v1"
+    },
+    "series": {
+      "const": "HGD_CMD"
+    },
+    "publication_id": {
+      "type": "string",
+      "pattern": "^hgd:cmd:[0-9]{3}$"
+    },
+    "citation_id": {
+      "type": "string",
+      "pattern": "^HGD CMD-[0-9]{3}$"
+    },
+    "canonical_product_id": {
+      "type": "string"
+    },
+    "registration_type": {
+      "enum": [
+        "RETROACTIVE_AFTER_PUBLIC_RELEASE",
+        "PRE_PUBLIC_WEB_RELEASE_INITIAL_REGISTRATION",
+        "AT_PUBLICATION_INTEGRITY_REGISTRATION"
+      ]
+    },
+    "canonical_publication_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "integrity_registration_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "web_release_status_at_registration": {
+      "type": "string"
+    },
+    "hash_algorithm": {
+      "const": "sha256"
+    },
+    "chain_position": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "genesis": {
+      "type": "boolean"
+    },
+    "previous_manifest_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "SUPERSEDED",
+        "REVOKED"
+      ]
+    },
+    "supersedes_manifest_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "artifacts": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
+}

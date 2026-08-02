@@ -1,0 +1,49 @@
+{
+  "schema": "hgd.market_brief.public.v2",
+  "product": "HGD Weekly Market Brief",
+  "brief_id": "Brief 002",
+  "brief_route": "/briefs/002",
+  "associated_cmd": {
+    "citation_id": "HGD CMD-002",
+    "machine_identity": "hgd:cmd:002",
+    "record_route": "/records/002"
+  },
+  "cycle": {
+    "run_date": "2026-07-31",
+    "decision_period": "2026-07-26",
+    "publication_timestamp": "2026-08-01T00:35:59Z",
+    "publication_date": "2026-08-01",
+    "allocation_effective_date": "2026-07-31"
+  },
+  "title": "Certified Hold, Lower Confidence",
+  "sections": [
+    {
+      "heading": "The Check",
+      "text": "Did the completed Friday cycle justify changing the certified HGD posture?"
+    },
+    {
+      "heading": "What Actually Changed",
+      "text": "The posture held at Recovery Transition, but confidence is now low. The July 31 cycle preserved a defensive analytical allocation while keeping primary and secondary exposure present."
+    },
+    {
+      "heading": "The Line",
+      "text": "Certified analytical Core state: primary 24.6%, secondary 16.4%, defensive 59.0%, avoid 0.0%. These are internal analytical buckets, not instrument-level implementation weights."
+    }
+  ],
+  "publication_status": "PUBLISHED",
+  "revision": {
+    "active_public_revision": 2,
+    "supersedes_revision": 1,
+    "correction_classification": "PRE_PUBLIC_WEB_RELEASE_PUBLIC_PROJECTION"
+  },
+  "public_disclosure": [
+    "This Brief is public and does not require membership.",
+    "Not investment advice. Informational and educational purposes only.",
+    "Full monthly gate tables and portfolio-construction detail are part of HighGravityData Reports."
+  ],
+  "visual_contract": {
+    "chart_count": 0,
+    "figure_count": 0,
+    "orphaned_visual_references": 0
+  }
+}

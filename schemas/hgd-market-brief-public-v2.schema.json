@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://highgravitydata.com/schemas/hgd-market-brief-public-v2.schema.json",
+  "title": "HGD Weekly Market Brief Public Projection v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "product",
+    "brief_id",
+    "brief_route",
+    "associated_cmd",
+    "cycle",
+    "title",
+    "sections",
+    "publication_status",
+    "revision",
+    "public_disclosure",
+    "visual_contract"
+  ],
+  "properties": {
+    "schema": {
+      "const": "hgd.market_brief.public.v2"
+    },
+    "product": {
+      "const": "HGD Weekly Market Brief"
+    },
+    "brief_id": {
+      "type": "string",
+      "pattern": "^Brief [0-9]{3}$"
+    },
+    "brief_route": {
+      "type": "string",
+      "pattern": "^/briefs/[0-9]{3}$"
+    },
+    "associated_cmd": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citation_id",
+        "machine_identity",
+        "record_route"
+      ],
+      "properties": {
+        "citation_id": {
+          "type": "string",
+          "pattern": "^HGD CMD-[0-9]{3}$"
+        },
+        "machine_identity": {
+          "type": "string",
+          "pattern": "^hgd:cmd:[0-9]{3}$"
+        },
+        "record_route": {
+          "type": "string",
+          "pattern": "^/records/[0-9]{3}$"
+        }
+      }
+    },
+    "cycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_date",
+        "decision_period",
+        "publication_timestamp",
+        "publication_date",
+        "allocation_effective_date"
+      ],
+      "properties": {
+        "run_date": {
+          "type": "string"
+        },
+        "decision_period": {
+          "type": "string"
+        },
+        "publication_timestamp": {
+          "type": "string"
+        },
+        "publication_date": {
+          "type": "string"
+        },
+        "allocation_effective_date": {
+          "type": "string"
+        }
+      }
+    },
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "heading",
+          "text"
+        ],
+        "properties": {
+          "heading": {
+            "enum": [
+              "The Check",
+              "What Actually Changed",
+              "The Line"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "publication_status": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active_public_revision",
+        "correction_classification"
+      ],
+      "properties": {
+        "active_public_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "supersedes_revision": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "correction_classification": {
+          "type": "string"
+        }
+      }
+    },
+    "public_disclosure": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "visual_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chart_count",
+        "figure_count",
+        "orphaned_visual_references"
+      ],
+      "properties": {
+        "chart_count": {
+          "const": 0
+        },
+        "figure_count": {
+          "const": 0
+        },
+        "orphaned_visual_references": {
+          "const": 0
+        }
+      }
+    }
+  }
+}

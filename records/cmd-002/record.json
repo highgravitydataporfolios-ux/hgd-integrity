@@ -1,0 +1,47 @@
+{
+  "schema": "hgd.cmd.public.v1",
+  "product": "HGD Certified Model Decision",
+  "citation_id": "HGD CMD-002",
+  "machine_identity": "hgd:cmd:002",
+  "canonical_product_id": "hgd-weekly-record-2026-07-31",
+  "issue_number": 2,
+  "record_route": "/records/002",
+  "model_public_id": "master_v1_3_dcl_confidence_rcl_hc_guardrail_v2_ml_signal_v1",
+  "run_date": "2026-07-31",
+  "decision_period": "2026-07-26",
+  "publication_timestamp": "2026-08-01T00:35:59Z",
+  "publication_date": "2026-08-01",
+  "allocation_effective_date": "2026-07-31",
+  "posture": "Recovery Transition",
+  "regime": "stress",
+  "confidence": "low",
+  "continuity": "PRIOR_CERTIFIED_STATE_AVAILABLE",
+  "publication_status": "PUBLISHED",
+  "allocation_summary": "Certified analytical Core state: primary 24.6%, secondary 16.4%, defensive 59.0%, avoid 0.0%. These are internal analytical buckets, not instrument-level implementation weights.",
+  "public_reasoning": {
+    "why_this_decision": "HGD remains in Recovery Transition with low confidence for the July 31 certified cycle. The prior certified analytical state remains the July 17 public Record 001 bridge authority, and the certified allocation remains primary 24.6%, secondary 16.4%, defensive 59.0%, avoid 0.0%.",
+    "what_changed": [
+      "The July 31 cycle was certified from fresh current-date inputs.",
+      "Confidence is low for decision period 2026-07-26.",
+      "Defensive analytical Core weight is 59.0%."
+    ],
+    "what_held": [
+      "Certified posture remains Recovery Transition.",
+      "Regime remains stress.",
+      "Record 001 remains immutable as the prior public certified record."
+    ],
+    "what_matters_now": [
+      "Certified analytical Core state: primary 24.6%, secondary 16.4%, defensive 59.0%, avoid 0.0%. These are internal analytical buckets, not instrument-level implementation weights."
+    ]
+  },
+  "companion_brief": {
+    "citation_id": "Brief 002",
+    "brief_id": "Brief 002",
+    "brief_route": "/briefs/002"
+  },
+  "methodology_public_version": "HGD public methodology v1",
+  "public_disclosure": [
+    "Not investment advice. Informational and educational purposes only.",
+    "Analytical Core sleeve weights are not retail implementation instructions."
+  ]
+}

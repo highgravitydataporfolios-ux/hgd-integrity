@@ -1,0 +1,12 @@
+{
+  "schema": "hgd.integrity.verification_receipt.v1",
+  "publication_id": "hgd:cmd:002",
+  "citation_id": "HGD CMD-002",
+  "manifest_sha256": "738c68732a6e52a58ebd3510392a9ba5e64aadfda2157e5a465baca3cac56f34",
+  "canonicalization_standard": "RFC 8785 JSON Canonicalization Scheme",
+  "artifact_count": 2,
+  "chain_predecessor_sha256": "7e30197cad2fb7700543aa93a0709b67238e994050db9dc6f184a713c0296d58",
+  "signature_bundle_filename": "hgd-integrity-manifest-v1.sigstore.json",
+  "verification_command": "node verify/hgd-verify.mjs records/cmd-002",
+  "release_tag": "hgd-cmd-002-integrity-v1"
+}
