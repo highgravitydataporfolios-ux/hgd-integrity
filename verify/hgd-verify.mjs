@@ -69,6 +69,12 @@ function readJsonNoDuplicates(file) {
   assert(!hasDuplicateKeys(text), 'duplicate JSON key: ' + file);
   return JSON.parse(text);
 }
+function readManifestWithDigest(bundleDir) {
+  const file = path.join(bundleDir, 'hgd-integrity-manifest-v1.json');
+  const bytes = fs.readFileSync(file);
+  const data = readJsonNoDuplicates(file);
+  return { data, digest: sha256(bytes), dir: bundleDir };
+}
 function ensureNoPrivateMarkers(file, buffer) {
   const text = buffer.toString('utf8');
   for (const marker of PRIVATE_MARKERS) assert(!text.includes(marker), 'private marker in ' + file);
@@ -125,6 +131,28 @@ if (manifest.chain_position === 0) {
 } else {
   assert(manifest.genesis === false, 'non-genesis manifest must have genesis=false');
   assert(/^[a-f0-9]{64}$/.test(manifest.previous_manifest_sha256 || ''), 'missing predecessor digest');
+}
+const siblingDirs = fs.readdirSync(path.dirname(dir))
+  .map((entry) => path.join(path.dirname(dir), entry))
+  .filter((entry) => fs.existsSync(path.join(entry, 'hgd-integrity-manifest-v1.json')));
+if (siblingDirs.length > 1) {
+  const siblings = siblingDirs.map(readManifestWithDigest).sort((a, b) => a.data.chain_position - b.data.chain_position);
+  const citationIds = new Set();
+  const publicationIds = new Set();
+  const positions = new Set();
+  for (const item of siblings) {
+    assert(!citationIds.has(item.data.citation_id), 'duplicate CMD citation identity in local chain');
+    assert(!publicationIds.has(item.data.publication_id), 'duplicate CMD publication identity in local chain');
+    assert(!positions.has(item.data.chain_position), 'duplicate chain position in local chain');
+    citationIds.add(item.data.citation_id);
+    publicationIds.add(item.data.publication_id);
+    positions.add(item.data.chain_position);
+  }
+  assert(siblings[0].data.genesis === true && siblings[0].data.previous_manifest_sha256 === null, 'local chain genesis is invalid');
+  for (let i = 1; i < siblings.length; i++) {
+    assert(siblings[i].data.genesis === false, 'non-genesis local chain entry has genesis=true');
+    assert(siblings[i].data.previous_manifest_sha256 === siblings[i - 1].digest, 'local chain predecessor digest mismatch');
+  }
 }
 if (!skipSignature) {
   const bundle = path.join(dir, 'hgd-integrity-manifest-v1.sigstore.json');
