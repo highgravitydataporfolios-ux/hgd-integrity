@@ -1,0 +1,8 @@
+{
+  "schema": "hgd.integrity.verification_receipt.v2",
+  "status": "ACTIVE_UNSIGNED_PENDING_WORKFLOW",
+  "manifest_sha256": "a181ef1dac7a31285f987242ce77e51b8420fff0fa7ce9e7619859d882a12a1e",
+  "record_brief_pair": "2/3",
+  "series_predecessor": "PASS",
+  "revision_predecessor": "PASS"
+}

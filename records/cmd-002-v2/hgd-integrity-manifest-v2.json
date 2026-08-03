@@ -1,0 +1,44 @@
+{
+  "schema": "hgd.integrity.manifest.v2",
+  "publication_id": "hgd:cmd:002",
+  "citation_id": "HGD CMD-002",
+  "active_record_revision": 2,
+  "active_brief_revision": 3,
+  "superseded_record_revision": 1,
+  "superseded_brief_revision": 2,
+  "supersession_type": "PUBLIC_LANGUAGE_AND_EVIDENCE_RICH_MARKET_CONTEXT_REVISION",
+  "series_predecessor_manifest_sha256": "7e30197cad2fb7700543aa93a0709b67238e994050db9dc6f184a713c0296d58",
+  "supersedes_manifest_sha256": "738c68732a6e52a58ebd3510392a9ba5e64aadfda2157e5a465baca3cac56f34",
+  "status": "ACTIVE",
+  "superseded_revision_status": "VALID_HISTORICAL_SUPERSEDED",
+  "artifacts": [
+    {
+      "artifact_type": "record_public_revision",
+      "filename": "record.json",
+      "sha256": "afb80fb65d8df2f0df294139efd3278afef09b022f4e57e8b997c77e0b03f6e3",
+      "byte_length": 2756,
+      "schema": "hgd.record.public.v2"
+    },
+    {
+      "artifact_type": "brief_public_revision",
+      "filename": "brief.json",
+      "sha256": "d9db025ea02355e5a878897c86a3dceac6e655588e22096c07cabce71760a64b",
+      "byte_length": 1145094,
+      "schema": "hgd.weekly_market_brief.public.v3"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_growth_126d_2x.png",
+      "sha256": "546d508c2daf8221a1835b81d42b2eebafd2f4b1853f42080a66afbf933b7e5d",
+      "byte_length": 467009,
+      "schema": "image/png"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_drawdown_126d_2x.png",
+      "sha256": "68ec517bcfe1593726e4a3d8e33ac0d92aa994e17f6245fe92c656391e81aad5",
+      "byte_length": 386821,
+      "schema": "image/png"
+    }
+  ]
+}

@@ -22,7 +22,21 @@
       "manifest_path": "records/cmd-002/hgd-integrity-manifest-v1.json",
       "manifest_sha256": "738c68732a6e52a58ebd3510392a9ba5e64aadfda2157e5a465baca3cac56f34",
       "release_tag": "hgd-cmd-002-integrity-v1",
-      "status": "ACTIVE"
+      "status": "SUPERSEDED_VALID_HISTORICAL_REVISION"
+    },
+    {
+      "publication_id": "hgd:cmd:002",
+      "citation_id": "HGD CMD-002",
+      "chain_position": 1,
+      "genesis": false,
+      "previous_manifest_sha256": "7e30197cad2fb7700543aa93a0709b67238e994050db9dc6f184a713c0296d58",
+      "manifest_path": "records/cmd-002-v2/hgd-integrity-manifest-v2.json",
+      "manifest_sha256": "a181ef1dac7a31285f987242ce77e51b8420fff0fa7ce9e7619859d882a12a1e",
+      "release_tag": "hgd-cmd-002-integrity-v2",
+      "status": "ACTIVE",
+      "active_record_revision": 2,
+      "active_brief_revision": 3,
+      "supersedes_manifest_sha256": "738c68732a6e52a58ebd3510392a9ba5e64aadfda2157e5a465baca3cac56f34"
     }
   ]
 }

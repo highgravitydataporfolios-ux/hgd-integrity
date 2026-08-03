@@ -1,0 +1,9 @@
+{
+  "schema": "hgd.integrity.supersession_receipt.v1",
+  "publication_id": "hgd:cmd:002",
+  "supersedes_release_tag": "hgd-cmd-002-integrity-v1",
+  "new_release_tag": "hgd-cmd-002-integrity-v2",
+  "prior_revision_status": "VALID_HISTORICAL_SUPERSEDED",
+  "certified_decision_changed": false,
+  "manifest_sha256": "a181ef1dac7a31285f987242ce77e51b8420fff0fa7ce9e7619859d882a12a1e"
+}

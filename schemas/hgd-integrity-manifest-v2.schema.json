@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://highgravitydata.com/schemas/hgd-integrity-manifest-v2.schema.json",
+  "title": "HGD Integrity Manifest v2 Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "publication_id",
+    "active_record_revision",
+    "active_brief_revision",
+    "series_predecessor_manifest_sha256",
+    "supersedes_manifest_sha256",
+    "status",
+    "superseded_revision_status",
+    "artifacts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "hgd.integrity.manifest.v2"
+    },
+    "publication_id": {
+      "type": "string"
+    },
+    "citation_id": {
+      "type": "string"
+    },
+    "active_record_revision": {
+      "type": "integer"
+    },
+    "active_brief_revision": {
+      "type": "integer"
+    },
+    "superseded_record_revision": {
+      "type": "integer"
+    },
+    "superseded_brief_revision": {
+      "type": "integer"
+    },
+    "supersession_type": {
+      "type": "string"
+    },
+    "series_predecessor_manifest_sha256": {
+      "type": "string"
+    },
+    "supersedes_manifest_sha256": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "UNSIGNED_STAGE_ONLY",
+        "ACTIVE"
+      ]
+    },
+    "superseded_revision_status": {
+      "const": "VALID_HISTORICAL_SUPERSEDED"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_type",
+          "filename",
+          "sha256",
+          "byte_length",
+          "schema"
+        ],
+        "properties": {
+          "artifact_type": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "byte_length": {
+            "type": "integer"
+          },
+          "schema": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -22,33 +22,28 @@ jobs:
         run: |
           node verify/hgd-verify.mjs records/cmd-001 --skip-signature
           node verify/hgd-verify.mjs records/cmd-002 --skip-signature
-      - name: Sign canonical manifests
+          node verify/hgd-verify.mjs records/cmd-002-v2 --skip-signature
+      - name: Sign superseding CMD-002 v2 manifest
         run: |
-          cosign sign-blob records/cmd-001/hgd-integrity-manifest-v1.json --bundle records/cmd-001/hgd-integrity-manifest-v1.sigstore.json --yes
-          cosign sign-blob records/cmd-002/hgd-integrity-manifest-v1.json --bundle records/cmd-002/hgd-integrity-manifest-v1.sigstore.json --yes
-      - name: Verify signed bundles
+          cosign sign-blob records/cmd-002-v2/hgd-integrity-manifest-v2.json --bundle records/cmd-002-v2/hgd-integrity-manifest-v2.sigstore.json --yes
+      - name: Verify signed superseding bundle
         run: |
-          node verify/hgd-verify.mjs records/cmd-001
-          node verify/hgd-verify.mjs records/cmd-002
+          node verify/hgd-verify.mjs records/cmd-002-v2
       - name: Upload signed release payload
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: hgd-integrity-signed-release-payload
+          name: hgd-cmd-002-integrity-v2-signed-release-payload
           path: |
-            records/cmd-001/record.json
-            records/cmd-001/brief.json
-            records/cmd-001/hgd-integrity-manifest-v1.json
-            records/cmd-001/hgd-integrity-manifest-v1.sigstore.json
-            records/cmd-001/SHA256SUMS
-            records/cmd-001/verification-receipt.json
-            records/cmd-001/README.md
-            records/cmd-002/record.json
-            records/cmd-002/brief.json
-            records/cmd-002/hgd-integrity-manifest-v1.json
-            records/cmd-002/hgd-integrity-manifest-v1.sigstore.json
-            records/cmd-002/SHA256SUMS
-            records/cmd-002/verification-receipt.json
-            records/cmd-002/README.md
+            records/cmd-002-v2/record.json
+            records/cmd-002-v2/brief.json
+            records/cmd-002-v2/chart_cross_asset_growth_126d_2x.png
+            records/cmd-002-v2/chart_cross_asset_drawdown_126d_2x.png
+            records/cmd-002-v2/hgd-integrity-manifest-v2.json
+            records/cmd-002-v2/hgd-integrity-manifest-v2.sigstore.json
+            records/cmd-002-v2/SHA256SUMS
+            records/cmd-002-v2/verification-receipt.json
+            records/cmd-002-v2/supersession-receipt.json
+            records/cmd-002-v2/README.md
   publish-release:
     needs: validate-sign
     runs-on: ubuntu-latest
@@ -61,7 +56,7 @@ jobs:
       - name: Download signed release payload
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
-          name: hgd-integrity-signed-release-payload
+          name: hgd-cmd-002-integrity-v2-signed-release-payload
           path: signed-payload
       - name: Install cosign for release verification
         uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6
@@ -69,19 +64,11 @@ jobs:
           cosign-release: v3.1.2
       - name: Verify payload hashes and signatures
         run: |
-          cp signed-payload/cmd-001/hgd-integrity-manifest-v1.sigstore.json records/cmd-001/
-          cp signed-payload/cmd-002/hgd-integrity-manifest-v1.sigstore.json records/cmd-002/
-          node verify/hgd-verify.mjs records/cmd-001
-          node verify/hgd-verify.mjs records/cmd-002
-      - name: Create CMD-001 draft release
+          cp signed-payload/hgd-integrity-manifest-v2.sigstore.json records/cmd-002-v2/
+          node verify/hgd-verify.mjs records/cmd-002-v2
+      - name: Create CMD-002 v2 immutable release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create hgd-cmd-001-integrity-v1 signed-payload/cmd-001/* --draft --title "HGD CMD-001 Integrity v1" --notes "Registration type: RETROACTIVE_AFTER_PUBLIC_RELEASE. Integrity registration occurred after this CMD's original public release."
-          gh release edit hgd-cmd-001-integrity-v1 --draft=false
-      - name: Create CMD-002 draft release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create hgd-cmd-002-integrity-v1 signed-payload/cmd-002/* --draft --title "HGD CMD-002 Integrity v1" --notes "Registration type: PRE_PUBLIC_WEB_RELEASE_INITIAL_REGISTRATION. Integrity registration occurred before this CMD's first production website release."
-          gh release edit hgd-cmd-002-integrity-v1 --draft=false
+          gh release create hgd-cmd-002-integrity-v2 signed-payload/* --draft --title "HGD CMD-002 Integrity v2" --notes "This release supersedes the prior public revision of HGD Record 002 and Weekly Market Brief 002. The certified decision did not change. The prior hgd-cmd-002-integrity-v1 release remains available and independently verifiable as historical publication evidence."
+          gh release edit hgd-cmd-002-integrity-v2 --draft=false
