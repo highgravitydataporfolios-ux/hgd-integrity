@@ -18,7 +18,7 @@ if(manifest.schema==='hgd.integrity.manifest.v2'){
   assert(manifest.status==='ACTIVE','manifest status is not ACTIVE');
   assert(manifest.publication_id==='hgd:cmd:002','publication id mismatch');
   assert(manifest.active_record_revision===2,'active Record revision mismatch');
-  assert(manifest.active_brief_revision===3,'active Brief revision mismatch');
+  assert([3,4].includes(manifest.active_brief_revision),'active Brief revision mismatch');
   assert(/^[a-f0-9]{64}$/.test(manifest.series_predecessor_manifest_sha256),'missing series predecessor digest');
   assert(/^[a-f0-9]{64}$/.test(manifest.supersedes_manifest_sha256),'missing superseded revision digest');
   const receipt=readJsonNoDuplicates(path.join(dir,'verification-receipt.json'));

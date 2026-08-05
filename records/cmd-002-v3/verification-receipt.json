@@ -1,0 +1,9 @@
+{
+  "schema": "hgd.integrity.verification_receipt.v1",
+  "citation_id": "HGD CMD-002",
+  "manifest_sha256": "88ba6c9b806eab92f69c94c9936c0f3c59ce419b7b44a187db536915acf82537",
+  "verification_status": "PASS",
+  "active_record_revision": 2,
+  "active_brief_revision": 4,
+  "generated_from_active_canonical_bytes": true
+}

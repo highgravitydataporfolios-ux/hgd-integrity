@@ -1,0 +1,52 @@
+{
+  "schema": "hgd.record.public.v2",
+  "public_series": "HGD Record",
+  "public_issue": "HGD Record 002",
+  "public_citation": "HGD Record 002",
+  "technical_identity": "hgd:cmd:002",
+  "legacy_technical_citation": "HGD CMD-002",
+  "canonical_product_id": "hgd-weekly-record-2026-07-31",
+  "issue_number": 2,
+  "public_revision": 2,
+  "revision_status": "STAGED_NOT_COMMITTED",
+  "supersedes_public_revision": 1,
+  "supersession_type": "PUBLIC_LANGUAGE_REASONING_AND_CONFIDENCE_EXPLANATION_REVISION",
+  "original_publication_timestamp": "2026-08-01T00:35:59Z",
+  "revision_published_at": null,
+  "publication_date": "2026-08-01",
+  "decision_period": "2026-07-26",
+  "certified_cycle": "2026-07-31",
+  "data_through": "2026-07-31",
+  "allocation_effective_date": "2026-07-31",
+  "model_public_id": "master_v1_3_dcl_confidence_rcl_hc_guardrail_v2_ml_signal_v1",
+  "posture": "Recovery Transition",
+  "regime": "stress",
+  "confidence": "Low",
+  "continuity": "PRIOR_CERTIFIED_STATE_AVAILABLE",
+  "allocation": {
+    "Primary": "24.6%",
+    "Secondary": "16.4%",
+    "Defensive": "59.0%",
+    "Avoid": "0.0%"
+  },
+  "public_reasoning": {
+    "why_this_decision": "The posture remained Recovery Transition because stable conditions in equities and foreign exchange were not broad enough to offset stress in crypto and fragility in rates, commodities, and the aggregate risk backdrop.",
+    "continuity": "HGD Record 002 continued the Recovery Transition posture from HGD Record 001.",
+    "allocation_explanation": "The certified analytical allocation remained Primary 24.6%, Secondary 16.4%, Defensive 59.0%, and Avoid 0.0%. These are analytical buckets, not instrument-level implementation weights."
+  },
+  "confidence_definition": "Confidence reflects the strength, agreement, and stability of the evidence supporting the certified posture. It is not a probability of profit or a forecast of future return.",
+  "confidence_explanation": "The model classified HGD Record 002 as Low confidence. The accompanying public evidence was consistent with that label: conditions remained uneven rather than broad and stable, with crypto Stressed and rates and commodities Fragile despite Stable conditions in equities and foreign exchange.",
+  "source_limitations": [
+    "Credit and liquidity are disclosed only in the technical source note for the companion Brief."
+  ],
+  "companion_brief": {
+    "public_issue": "Weekly Market Brief 002",
+    "public_revision": 3,
+    "brief_route": "/briefs/002"
+  },
+  "methodology_public_version": "HGD public methodology v1",
+  "public_disclosure": [
+    "Not investment advice. Informational and educational purposes only.",
+    "Analytical Core sleeve weights are not instrument-level implementation instructions."
+  ]
+}

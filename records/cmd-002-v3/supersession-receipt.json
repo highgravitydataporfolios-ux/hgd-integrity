@@ -1,0 +1,12 @@
+{
+  "schema": "hgd.integrity.supersession_receipt.v1",
+  "publication_id": "hgd:cmd:002",
+  "prior_release": "hgd-cmd-002-integrity-v2",
+  "new_release": "hgd-cmd-002-integrity-v3",
+  "superseded_brief_revision": 3,
+  "active_brief_revision": 4,
+  "supersedes_manifest_sha256": "a181ef1dac7a31285f987242ce77e51b8420fff0fa7ce9e7619859d882a12a1e",
+  "series_predecessor_manifest_sha256": "7e30197cad2fb7700543aa93a0709b67238e994050db9dc6f184a713c0296d58",
+  "record_decision_changed": false,
+  "public_summary": "Weekly Market Brief 002 revision 4 supersedes revision 3. HGD Record 002 and its certified decision did not change. Prior releases remain available and independently verifiable as historical publication evidence."
+}

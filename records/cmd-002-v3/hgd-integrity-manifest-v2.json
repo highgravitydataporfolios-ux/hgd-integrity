@@ -1,0 +1,72 @@
+{
+  "schema": "hgd.integrity.manifest.v2",
+  "publication_id": "hgd:cmd:002",
+  "citation_id": "HGD CMD-002",
+  "active_record_revision": 2,
+  "active_brief_revision": 4,
+  "superseded_record_revision": null,
+  "superseded_brief_revision": 3,
+  "supersession_type": "ORIGINAL_CLAUDE_EDITORIAL_CONTRACT_RESTORATION",
+  "series_predecessor_manifest_sha256": "7e30197cad2fb7700543aa93a0709b67238e994050db9dc6f184a713c0296d58",
+  "supersedes_manifest_sha256": "a181ef1dac7a31285f987242ce77e51b8420fff0fa7ce9e7619859d882a12a1e",
+  "status": "ACTIVE",
+  "superseded_revision_status": "VALID_HISTORICAL_SUPERSEDED",
+  "artifacts": [
+    {
+      "artifact_type": "record_public_revision",
+      "filename": "record.json",
+      "sha256": "afb80fb65d8df2f0df294139efd3278afef09b022f4e57e8b997c77e0b03f6e3",
+      "byte_length": 2756,
+      "schema": "hgd.record.public.v2"
+    },
+    {
+      "artifact_type": "brief_public_revision",
+      "filename": "brief.json",
+      "sha256": "370ae927430a06573c5980278e6e974bcd1b9e044d36e8282fe8a51370614a65",
+      "byte_length": 78906,
+      "schema": "HGD_WEEKLY_MARKET_BRIEF_PUBLIC_V4"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_drawdown_common_window.svg",
+      "sha256": "70c2271ac6d1e36c9b01b5d51a14451f082a7209b509777f05451c6313cfeecc",
+      "byte_length": 7119,
+      "schema": "image/svg+xml"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_drawdown_common_window_1x.png",
+      "sha256": "bcd4fd74c44926aaf89b11f68ce716f693a958bdb7ca732ee3a513f44730e90e",
+      "byte_length": 79928,
+      "schema": "image/png"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_drawdown_common_window_2x.png",
+      "sha256": "9801893bd89101e2b1e050cbd0eb2ead305a7aa45c18584fc35a8e16f7124a0f",
+      "byte_length": 196740,
+      "schema": "image/png"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_growth_common_window.svg",
+      "sha256": "75a2c18dd9fbf015604344b1e96121024ca325ed96294e0518e56236f6acef71",
+      "byte_length": 7283,
+      "schema": "image/svg+xml"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_growth_common_window_1x.png",
+      "sha256": "215dae5f8a96821fcb260f41738bc310459f57283abc1fc121039433efcaa6da",
+      "byte_length": 82367,
+      "schema": "image/png"
+    },
+    {
+      "artifact_type": "brief_chart_asset",
+      "filename": "chart_cross_asset_growth_common_window_2x.png",
+      "sha256": "d0f5896eee79e0206da30338ca8fd455d08c65ab089f94d5b88d621ee5507591",
+      "byte_length": 202880,
+      "schema": "image/png"
+    }
+  ]
+}
